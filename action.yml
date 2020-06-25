@@ -1,0 +1,12 @@
+name: "Ansible CLI Github Action"
+description: "Allows one to run Ansible and Linux related commands"
+inputs:
+  command:
+    description: "Command to execute"
+    required: true
+    default: "ansible-playbook"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.command }}
